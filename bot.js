@@ -37,9 +37,9 @@ bot.on('ready', function () {
     // Generate all channel related data
     var channelArr = bot.channels.cache.array();
     console.log(`\nAvailable channels:\n`);
-    for (i in channelArr) {
+    /*for (i in channelArr) {
         console.log(`[${channelArr[i].guild}] [${channelArr[i].name}] [${channelArr[i].id}]`);
-    }
+    }*/
     console.log(`\n\nListening to:\n`);
     for (i in channels) {
         if (channels[i].name) {
@@ -94,7 +94,7 @@ bot.on('disconnect', function (errMsg, code) {
     logger.warn('----- Bot disconnected from Discord with code', code, 'for reason:', errMsg, '-----');
     bot.login(auth.token);
 });
-
+/*
 bot.on('channelCreate', function (newChannel) {
     if(consoleOutput) console.log("New Channel " + newChannel.name + " has ID of " + newChannel.id);
     
@@ -153,9 +153,9 @@ bot.on('guildMemberUpdate', function (oldMember, newMember) {
         }, 1800000);
     }
 });
-
+*/
 bot.on('message', function (message) {
-    logger.debug(`[${message.guild.name}] [${message.channel.name}] [${message.author.username}] > ${message.content}`);
+    //logger.debug(`[${message.guild.name}] [${message.channel.name}] [${message.author.username}] > ${message.content}`);
     
     // This code checks for the FIRST instance of the Server ID in the server list
     if(servArr.indexOf(message.guild.id) > -1){
